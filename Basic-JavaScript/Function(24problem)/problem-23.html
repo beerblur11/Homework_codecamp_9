@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem 23</title>
+</head>
+<body>
+    <script>
+        //                         ---*---
+        //                         --***--
+        //             --*--       -*****-
+        //             -***-       *******
+        //    -*-      *****       -*****-
+        //    ***      -***-       --***--
+        //    -*-      --*--       ---*---
+        //   n = 2     n = 3        n = 4
+
+        function draw (n) {
+            for (let rowA = 0; rowA < (n-1); rowA++) {
+                let result = "";
+                for (let columnA = 1; columnA < (n * 2); columnA++) {
+                    (columnA <= (n + rowA) && columnA >= (n - rowA)) ? result = result + "*" : result = result + "-";
+                }
+                console.log(result);
+            }
+            for (let rowB = 0; rowB < n; rowB++) {
+                let result = "";
+                for (let columnB = 1; columnB < (n*2); columnB++){
+                    (columnB <= rowB || (columnB + rowB) > (n*2 - 1))? result = result + "-" : result = result + "*";
+                }
+                console.log(result);
+            }
+        }
+        
+        console.log("draw(2)");
+        draw(2);
+
+        console.log("draw(3)");
+        draw(3);
+
+        console.log("draw(4)");
+        draw(4);
+        
+    </script>
+</body>
+</html>

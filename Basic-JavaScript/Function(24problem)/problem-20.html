@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem 20</title>
+</head>
+
+<body>
+    <script>
+        //                       ---1
+        //                       --23
+        //             --1       -456
+        //             -23       78910
+        //    -1       456       -111213
+        //    23       -78       --1415
+        //    -4       --9       ---16
+        //   n = 2    n = 3      n = 4
+
+        function draw(n) {
+            let resultNo = 0;
+            for (let row = 1; row < (n * 2); row++) {
+                let result = "";
+                if (row < n) {
+                    for (let columnA = n; columnA > 0; columnA--) {
+                        if (row < columnA) {
+                            result = result + "-";
+                        }
+                        else {
+                            resultNo = +(resultNo) + 1;
+                            result = result + resultNo;
+                        }
+                    }
+                }
+                else if (row > n) {
+                    for (let columnB = n; columnB < (n * 2); columnB++) {
+                        if (row > columnB) {
+                            result = result + "-"
+                        }
+                        else {
+                            resultNo = +(resultNo) + 1;
+                            result = result + resultNo;
+                        }
+                    }
+                }
+                else {
+                    for (let columnC = 0; columnC < n; columnC++) {
+                        resultNo = +(resultNo) + 1;
+                        result = result + resultNo;
+                    }
+                }
+                console.log(result)
+            }
+        }
+        
+        console.log("draw(2)");
+        draw(2);
+
+        console.log("draw(3)");
+        draw(3);
+
+        console.log("draw(4)");
+        draw(4);
+        
+    </script>
+</body>
+
+</html>

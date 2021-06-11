@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 7-6</title>
+</head>
+
+<body>
+    <script>
+        let firstPlayer = +prompt("ใส่ตัวเลขที่ต้องการให้เพื่อนของคุณทาย");
+        while (firstPlayer < 1 || firstPlayer > 100) {
+            alert("ใส่ตัวเลขที่อยู่ในระหว่าง 1-100 เท่านั้น");
+            firstPlayer = +prompt("ใส่ตัวเลขของคุณอีกครั้ง");
+        }
+        let secondPlayer = +prompt("ทายตัวเลขของเพื่อนคุณ ?");
+        for (let i = 9; i > 0; i--) {
+            let result = (secondPlayer == firstPlayer) ? "ถูกต้อง!!" : (secondPlayer > firstPlayer) ? "มากไปหน่อยนะ" : "น้อยไปหน่อยนะ";
+            alert(result);
+            if (secondPlayer == firstPlayer) break;
+            secondPlayer = +prompt(`โอกาสของคุณเหลืออีก ${i} ครั้ง`)
+        }
+        let finalWord = (secondPlayer !== firstPlayer)? "คุณใช้โอกาสหมดแล้ว เสียใจด้วย" : "ถูกต้อง!!" ;
+        alert(finalWord);
+    </script>
+</body>
+
+</html>

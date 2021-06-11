@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem 10</title>
+</head>
+<body>
+    <script>
+        //                       1234
+        //             123       2468
+        //     12      246       36912
+        //     24      369       481216
+        //   n = 2    n = 3      n = 4
+
+        function draw(n) {
+            for (let row = 1; row <= n; row ++){
+                let result = "";
+                for (let column = 1; column <= n; column++){
+                result = result + (column * row)
+            }
+                console.log(result)
+            }
+            
+        }
+        
+        console.log("draw(2)");
+        draw(2);
+
+        console.log("draw(3)");
+        draw(3);
+
+        console.log("draw(4)");
+        draw(4);
+        
+    </script>
+</body>
+</html>
